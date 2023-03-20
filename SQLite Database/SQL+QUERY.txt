@@ -1,0 +1,8 @@
+Buttons 3: List the number of sailors for each nationality:
+SELECT SUM(CASE WHEN NATIONALITY = 'Palestinian' THEN 1 ELSE 0 END) AS Palestinian, SUM(CASE WHEN NATIONALITY = 'Jordanian' THEN 1 ELSE 0 END) AS Jordanian,SUM(CASE WHEN NATIONALITY = 'Qatari' THEN 1 ELSE 0 END) AS Qatari FROM SAILOR
+
+Buttons 4: List the name of the boats in red color:
+SELECT NAME FROM BOAT WHERE COLOR='Red'
+
+Buttons 5: List Palestinian sailor names who have a red boat:
+SELECT S.NAME FROM SAILOR as S  JOIN BOAT as B ON S.BOATID = B.ID WHERE S.NATIONALITY='Palestinian' AND B.COLOR='Red'
